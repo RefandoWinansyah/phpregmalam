@@ -15,11 +15,16 @@
     $query_view=mysqli_query($koneksi, "select * from kategori");
 
     ?>
+    <br>
+    <a href="inputkategori.php""btn btn-danger"> Tambah Data Kategori </a>
+    <br>
     <table class="table table-borderd" border="1">
         <tr>
             <td>No</td>
+            <td>ID Kategori</td>
             <td>Nama Barang</td>
             <td>Merk Barang</td>
+            <td colspan="4"> Eksekusi </td> 
         </tr>
     
 
@@ -30,8 +35,11 @@
 
         <tr>
             <td><?php echo $no++; ?></td>
+            <td><?php echo $tampil['id_kategori']; ?></td>
             <td><?php echo $tampil['nama_barang']; ?></td>
             <td><?php echo $tampil['merk_barang']; ?></td>
+            <td><a href="editkategori.php?id_kategori=<?php echo $tampil['id_kategori'];?>"> Edit </a></td>
+            <td><a href="hapuskategori.php?id_kategori=<?php echo $tampil['id_kategori'];?>"> Deleted </a></td>
         </tr>
 
 <?php } ?>

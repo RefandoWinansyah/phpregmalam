@@ -15,12 +15,16 @@
     $query_view=mysqli_query($koneksi, "select * from barang");
 
     ?>
+    <br>
+    <a href="inputbarang.php""btn btn-danger"> Tambah Data Barang </a>
+    <br>
     <table class="table table-borderd" border="1">
         <tr>
             <td>No</td>
             <td>ID Barang</td>
             <td>Jenis Barang</td>
             <td>Nama Barang</td>
+            <td colspan="4"> Eksekusi </td> 
         </tr>
     
 
@@ -34,6 +38,8 @@
             <td><?php echo $tampil['id_barang']; ?></td>
             <td><?php echo $tampil['jenis_barang']; ?></td>
             <td><?php echo $tampil['nama_barang']; ?></td>
+            <td><a href="editbarang.php?id_barang=<?php echo $tampil['id_barang'];?>"> Edit </a></td>
+            <td><a href="hapusbarang.php?id_barang=<?php echo $tampil['id_barang'];?>"> Deleted </a></td>
         </tr>
 
 <?php } ?>
